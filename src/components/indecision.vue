@@ -25,18 +25,23 @@ export default {
     watch: {
         question( value, oldValue ){
             this.isValidQuestion = false;
+            console.log(value);
             if ( !value.includes('?')) return
             this.isValidQuestion = true;
-            this.getAnswer()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+            this.getAnswer();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         }
     },
     methods: {
         async getAnswer(){
-            this.answer = 'Think .......'
-            const {answer, image} = await fetch( 'https://yesno.wtf/api' ).then( r => r.json() );
-            this.answer = answer === 'yes' ? 'Si!': 'No!';
-            this.img = image;
-
+            try {
+                this.answer = 'Think .......'
+                const {answer, image} = await fetch( 'https://yesno.wtf/api' ).then( r => r.json() );
+                this.answer = answer === 'yes' ? 'Si!': 'No!';
+                this.img = image;
+            } catch (error) {
+                this.answer = 'Not load data in API';
+                this.img = null;
+            }
         }
     }
 }

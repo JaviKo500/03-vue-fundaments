@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component match snapshot 1`] = `
+<!--v-if-->
+<div class="bg-dark"></div>
+<div class="indecision-container"><input type="text" placeholder="ask a question?">
+  <p>Remember end with a symbol (?)</p>
+  <!--v-if-->
+</div>
+`;
+
+exports[`Component snapshot 1`] = `
+<!--v-if-->
+<div class="bg-dark"></div>
+<div class="indecision-container"><input type="text" placeholder="ask a question?">
+  <p>Remember end with a symbol (?)</p>
+  <!--v-if-->
+</div>
+`;
